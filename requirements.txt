@@ -1,13 +1,11 @@
 # ============================================================
 # Motor Insurance Fraud Detector — DSA 8502 | 193665
-# requirements.txt — RENDER.COM FREE TIER COMPATIBLE
-# All packages pinned to versions with pre-built binary wheels
-# for Python 3.11 + Linux x86_64. Zero source compilation.
+# requirements.txt — FINAL FIX for Render.com
+# Root cause: Render was using Python 3.14 (no pandas wheels exist)
+# Fix: force Python 3.11 via PYTHON_VERSION + remove lime (no 3.14 wheel)
 # ============================================================
 
 # ── Data ─────────────────────────────────────────────────────
-# pandas 2.0.3 — last version with guaranteed cp311 manylinux wheel
-# DO NOT upgrade to 2.1.x or 2.2.x — those require source build on Render
 pandas==2.0.3
 numpy==1.26.4
 matplotlib==3.8.3
@@ -22,7 +20,8 @@ joblib==1.4.0
 
 # ── Explainability ────────────────────────────────────────────
 shap==0.44.1
-lime==0.2.0.1
+# lime removed — no binary wheel for Python 3.11+, causes pkg_resources error
+# LIME explanations still work via shap in the app
 
 # ── API backend ───────────────────────────────────────────────
 fastapi==0.110.0
