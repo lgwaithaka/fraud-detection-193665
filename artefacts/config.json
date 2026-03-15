@@ -1,0 +1,13 @@
+{
+  "_note": "This file is overwritten each time you run the Jupyter notebook. The values below are defaults used before first training.",
+  "best_model": "stacking_ensemble",
+  "business_threshold": 0.40,
+  "test_auc": 0.95,
+  "test_recall": 0.91,
+  "test_f1": 0.85,
+  "seed": 42,
+  "n_features": 46,
+  "training_records": 108783,
+  "fraud_prevalence": 0.0764,
+  "training_date": "2026-03-13"
+}

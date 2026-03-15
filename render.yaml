@@ -1,0 +1,62 @@
+# ============================================================
+# render.yaml  —  Render.com Deployment Blueprint
+# Motor Insurance Fraud Detector | DSA 8502 | 193665
+#
+# HOW TO USE:
+#   1. Push this file to the ROOT of your GitHub repository
+#   2. In Render.com: New + → Blueprint → connect your repo
+#   3. Render reads this file and creates BOTH services for you
+#
+# AFTER FIRST DEPLOY:
+#   - Copy the fraud-api-193665 URL (e.g. https://fraud-api-193665.onrender.com)
+#   - Paste it into the API_BASE_URL value below for the UI service
+#   - Push again → Render auto-redeploys
+# ============================================================
+
+services:
+
+  # ── Service 1: FastAPI Backend (the API) ─────────────────────────────────
+  - type: web
+    name: fraud-api-193665
+    runtime: python
+    region: oregon   # free tier is Oregon only
+    plan: free
+
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: WEB_CONCURRENCY
+        value: 1
+
+    healthCheckPath: /health
+
+  # ── Service 2: Streamlit UI (the dashboard) ───────────────────────────────
+  - type: web
+    name: fraud-ui-193665
+    runtime: python
+    region: oregon
+    plan: free
+
+    buildCommand: pip install -r requirements.txt
+    startCommand: >-
+      streamlit run streamlit_app.py
+      --server.port $PORT
+      --server.address 0.0.0.0
+      --server.headless true
+      --server.enableCORS false
+      --server.enableXsrfProtection false
+
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: WEB_CONCURRENCY
+        value: 1
+      # IMPORTANT: After deploying the API above, replace the URL below
+      # with YOUR actual fraud-api-193665 URL from the Render dashboard.
+      - key: API_BASE_URL
+        value: https://fraud-api-193665.onrender.com
+
+    healthCheckPath: /_stcore/health
