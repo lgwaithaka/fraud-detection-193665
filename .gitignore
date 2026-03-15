@@ -1,0 +1,53 @@
+# ============================================================
+# .gitignore — Files NOT uploaded to GitHub
+# ============================================================
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc
+.Python
+
+# Virtual environments (your local Python environment)
+env/
+venv/
+fraud_env/
+.venv/
+
+# Secrets
+.env
+*.env
+secrets.json
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Large raw data files — do NOT commit these
+insurance_fraud_v3_final.csv
+insurance_fraud_100k.csv
+insurance_fraud_enriched_final.csv
+AIMS_REPORTED_CLAIMS_2023-2024.csv
+Declined_claims_EXPAQ.xlsx
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE settings
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# NOTE: The artefacts/ folder IS committed to GitHub.
+# The .pkl model files must be in git for Render to load them.
+# If any .pkl exceeds 100 MB, see Section 7 of the deployment guide (Git LFS).
