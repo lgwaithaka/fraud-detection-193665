@@ -134,8 +134,8 @@ st.markdown("""
 <div class="main-header">
     <h1 style="margin:0; font-size:1.8rem;">🛡️ Motor Insurance Fraud Detector</h1>
     <p style="margin:0.3rem 0 0; opacity:0.85; font-size:0.95rem;">
-        A Case for East Africa · <br> Kenya DPA 2019 Compliant <br> · Powered by XGBoost + Stacking Ensemble + SHAP/LIME XAI<br>
-        DSA 8502 | Lawrence Gacheru Waithaka (193665) <br>· Strathmore University · 
+        · A Case for East Africa · <br> Kenya DPA 2019 Compliant ·  <br> · Powered by XGBoost + Stacking Ensemble + SHAP/LIME XAI · <br>
+        · DSA 8502 | Lawrence Gacheru Waithaka (193665) <br>· Strathmore University · 
     </p>
 </div>
 """, unsafe_allow_html=True)
