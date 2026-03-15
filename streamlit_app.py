@@ -134,8 +134,8 @@ st.markdown("""
 <div class="main-header">
     <h1 style="margin:0; font-size:1.8rem;">🛡️ Motor Insurance Fraud Detector</h1>
     <p style="margin:0.3rem 0 0; opacity:0.85; font-size:0.95rem;">
-        East Africa · Kenya DPA 2019 Compliant · Powered by XGBoost + Stacking Ensemble + SHAP/LIME XAI<br>
-        DSA 8502 · Strathmore University · Lawrence Gacheru Waithaka (193665)
+        A Case for East Africa · <br> Kenya DPA 2019 Compliant <br> · Powered by XGBoost + Stacking Ensemble + SHAP/LIME XAI<br>
+        DSA 8502 | Lawrence Gacheru Waithaka (193665) <br>· Strathmore University · 
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -163,7 +163,7 @@ with st.sidebar:
     st.markdown("---")
     page = st.radio(
         "Navigate to:",
-        ["🎯 Score a Claim", "📊 Batch Upload", "📈 Model Performance", "📖 About"],
+        ["🎯 Score a Claim:", "📊 Batch Upload:", "📈 Model Performance:", "📖 About the Model:"],
         index=0,
     )
 
@@ -564,34 +564,34 @@ elif page == "📈 Model Performance":
 # ── 11. PAGE: About ───────────────────────────────────────────────────────────
 elif page == "📖 About":
     st.markdown("""
-    ## About This System
+    ## About my System
 
-    ### Project
+    ### Project:
     **Predicting Fraudulent Motor Insurance Claims in East Africa Using Hybrid Ensemble
     Learning and Explainable AI**
 
     | Item | Detail |
     |---|---|
-    | **Student** | Lawrence Gacheru Waithaka (193665) |
+    | **Developer/Student** | Lawrence Gacheru Waithaka (193665) |
     | **Course** | DSA 8502 — Predictive & Optimization Techniques |
-    | **Institution** | Strathmore University — MSc Data Science |
-    | **Supervisors** | Dr. Allan Omondi, Dr. Kennedy Senagi |
+    | **Institution** | Strathmore Institute of Mathematical Sciences |
+    | **Supervisors** | Dr. Allan Omondi, Dr. Kennedy Senagi & Lee Bundi |
     | **Framework** | CRISP-DM |
     | **Dataset** | 108,783 records × 46 features (3 sources) |
 
     ---
 
-    ### Data Sources
+    ### Data Sources:
 
     | Source | Records | Fraud Labels |
     |---|---|---|
-    | Synthetic (NUELBUNDI benchmark) | 100,000 | Statistical distributions |
-    | AIMS Real Claims 2023–2024 (Britam Kenya) | 8,694 | IRA Kenya heuristic scoring |
-    | EXPAQ Confirmed Declined Claims | 89 | Investigator-verified |
+    | Synthetic (Kaggle - benchmark) | 100,000 | Statistical distributions |
+    | Insurance (KE) Real Claims 2023–2024 (Partner Insurance) | 8,694 | IRA Kenya heuristic scoring |
+    | Confirmed Declined Claims (Legacy System) | 89 | Investigator-verified |
 
     ---
 
-    ### Models Implemented
+    ### Models Implemented:
 
     1. **Decision Tree** — interpretable baseline
     2. **Random Forest** — bagging ensemble
@@ -603,22 +603,22 @@ elif page == "📖 About":
 
     ---
 
-    ### Explainability (XAI)
+    ### Explainability (XAI):
 
-    - **SHAP TreeExplainer** — exact, fast global + local explanations
-    - **LIME LimeTabularExplainer** — local linear approximations
-    - Both methods produce human-readable, Kenya-specific adjuster summaries
-
-    ---
-
-    ### Compliance
-    - Kenya Data Protection Act (2019) — no PII retained
-    - IRA Kenya fraud detection guidelines (2022) — thresholds aligned
-    - Explainable AI — every decision can be audited
+    - **SHAP TreeExplainer** — exact, fast global + local explanations.
+    - **LIME LimeTabularExplainer** — local linear approximations.
+    - Both methods produce human-readable, Kenya-specific adjuster summaries.
 
     ---
 
-    ### References
+    ### Compliance:
+    - Kenya Data Protection Act (2019) — No PII retained.
+    - IRA Kenya fraud detection guidelines (2022) — thresholds aligned.
+    - Explainable AI — every decision can be audited.
+
+    ---
+
+    ### Research References:
     1. Chen, T. & Guestrin, C. (2016). XGBoost. *KDD 2016.*
     2. Lundberg, S. & Lee, S.I. (2017). SHAP. *NeurIPS 2017.*
     3. Ribeiro, M.T. et al. (2016). LIME. *KDD 2016.*
