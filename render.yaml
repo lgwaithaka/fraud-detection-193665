@@ -22,7 +22,7 @@ services:
     region: oregon   # free tier is Oregon only
     plan: free
 
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install --upgrade pip && pip install --prefer-binary -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
 
     envVars:
@@ -40,7 +40,7 @@ services:
     region: oregon
     plan: free
 
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install --upgrade pip && pip install --prefer-binary -r requirements.txt
     startCommand: >-
       streamlit run streamlit_app.py
       --server.port $PORT
